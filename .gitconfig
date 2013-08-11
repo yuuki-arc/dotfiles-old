@@ -2,7 +2,7 @@
 	name = m.yamaoka
 	email = arcs7nine@gmail.com
 [core]
-	excludesfile = /Users/colors/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
