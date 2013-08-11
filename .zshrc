@@ -217,4 +217,7 @@ if [ $TERM = "screen" ] ; then
         alias ssh=ssh_tmux
     fi
 fi
+if [ $SHLVL = 1 ]; then
+    alias tmux="tmux attach || tmux new-session \; source-file ~/.tmux/session"
+fi
 
