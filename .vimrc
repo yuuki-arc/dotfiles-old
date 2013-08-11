@@ -2,7 +2,6 @@
 set nocompatible
 "set rtp+=~/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
 set rtp+=/Users/colors/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
- 
 
 filetype plugin indent off
 
