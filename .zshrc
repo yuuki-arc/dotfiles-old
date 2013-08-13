@@ -148,6 +148,7 @@ alias df="df -h"
 
 alias su="su -l"
 
+alias ctags="/usr/local/bin/ctags"
 
 ## terminal configuration
 #
@@ -201,7 +202,7 @@ esac
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
 eval "$(rbenv init -)"
-PATH=/usr/local/mysql/bin:~/bin:$PATH
+PATH=/usr/local/mysql/bin:~/bin:/usr/local/bin:$PATH
 export PATH
 export NODE_PATH=/usr/local/lib/node_modules
 
