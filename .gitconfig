@@ -11,3 +11,6 @@
 	trustExitCode = true
 [color]
 	ui = auto
+[alias]
+	co = checkout
+	st = status
