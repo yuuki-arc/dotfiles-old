@@ -3,6 +3,7 @@
 	email = arcs7nine@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = vim -f
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
