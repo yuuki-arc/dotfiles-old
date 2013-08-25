@@ -223,3 +223,6 @@ if [ $SHLVL = 1 ]; then
     alias tmux="tmux attach || tmux new-session \; source-file ~/.tmux/session"
 fi
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
