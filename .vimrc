@@ -2,6 +2,8 @@
 set nocompatible
 "set rtp+=~/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
 set rtp+=/Users/colors/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+set t_Co=256
 
 filetype plugin indent off
 
@@ -16,11 +18,16 @@ NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/vimshell.git'
 NeoBundle 'git://github.com/Shougo/vimproc.git'
 NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
-NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+" NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'git://github.com/vim-scripts/TwitVim.git'
 NeoBundle 'taichouchou2/alpaca_powertabline'
+NeoBundle 'itchyny/lightline.vim'
 
-let g:Powerline_symbols = 'fancy'
+let g:lightline = {
+      \ 'colorscheme': 'wombat'
+      \ }
+" let g:Powerline_symbols = 'fancy'
 
 filetype plugin on
 filetype indent on
+syntax on
