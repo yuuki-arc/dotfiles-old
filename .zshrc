@@ -64,11 +64,11 @@ zstyle ':vcs_info:bzr:*' use-simple true
 if is-at-least 4.3.10; then
     # git 用のフォーマット
     # git のときはステージしているかどうかを表示
-    zstyle ':vcs_info:git:*' formats '(%s)-[%b]' '%c%u %m'
-    zstyle ':vcs_info:git:*' actionformats '(%s)-[%b]' '%c%u %m' '<!%a>'
-    zstyle ':vcs_info:git:*' check-for-changes true
-    zstyle ':vcs_info:git:*' stagedstr "+"    # %c で表示する文字列
-    zstyle ':vcs_info:git:*' unstagedstr "-"  # %u で表示する文字列
+    zstyle ':vcs_info:(git|git-svn):*' formats '(%s)-[%b]' '%c%u %m %r'
+    zstyle ':vcs_info:(git|git-svn):*' actionformats '(%s)-[%b]' '%c%u %m' '<!%a> %r'
+    zstyle ':vcs_info:(git|git-svn):*' check-for-changes true
+    zstyle ':vcs_info:(git|git-svn):*' stagedstr "+"    # %c で表示する文字列
+    zstyle ':vcs_info:(git|git-svn):*' unstagedstr "-"  # %u で表示する文字列
 fi
 
 # hooks 設定
@@ -79,11 +79,12 @@ if is-at-least 4.3.11; then
     # のメッセージを設定する直前のフック関数
     # 今回の設定の場合はformat の時は2つ, actionformats の時は3つメッセージがあるので
     # 各関数が最大3回呼び出される。
-    zstyle ':vcs_info:git+set-message:*' hooks \
+    zstyle ':vcs_info:(git|git-svn)+set-message:*' hooks \
                                             git-hook-begin \
                                             git-untracked \
                                             git-push-status \
                                             git-nomerge-branch \
+					    git-nomerge-master \
                                             git-stash-count
 
     # フックの最初の関数
@@ -99,7 +100,7 @@ if is-at-least 4.3.11; then
         return 0
     }
 
-    # untracked フィアル表示
+    # untracked ファイル表示
     #
     # untracked ファイル(バージョン管理されていないファイル)がある場合は
     # unstaged (%u) に ? を表示
@@ -167,6 +168,25 @@ if is-at-least 4.3.11; then
         if [[ "$nomerged" -gt 0 ]] ; then
             # misc (%m) に追加
             hook_com[misc]+="(m${nomerged})"
+        fi
+    }
+
+    # とりあえず実装
+    function +vi-git-nomerge-master() {
+        # vcs_info_msg_1_ を設定する場合のみ処理の対象とする
+        if [[ "$1" != "1" ]]; then
+            return 0
+        fi
+
+        # master ブランチにいる時はなにもしない
+        if [[ "${hook_com[branch]}" == "master" ]]; then
+            return 0
+        fi
+
+        # 現在のブランチにまだマージしていないブランチ一覧を取得する。
+        # その中に master が含まれていた場合、 master は現在のブランチにマージ済みでないとみなす
+        if command git branch --no-merged 2>/dev/null | command grep 'master' > /dev/null 2>&1 ; then
+            hook_com[misc]+="(R)"
         fi
     }
 
@@ -272,7 +292,7 @@ HISTSIZE=50000
 SAVEHIST=50000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
-
+function history-all { history -E 1 }
 
 ## Completion configuration
 #
@@ -280,7 +300,24 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz compinit
 compinit -u
-
+zstyle ':completion:*:default' menu select=2
+# 補完関数の表示を強化する
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+# マッチ種別を別々に表示
+zstyle ':completion:*' group-name ''
+# セパレータを設定する
+zstyle ':completion:*' list-separator '-->'
+zstyle ':completion:*:manuals' separate-sections true
+# LS_COLORSを設定しておく
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# ファイル補完候補に色を付ける
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 ## zsh editor
 #
@@ -401,4 +438,6 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 eval "$(rbenv init -)"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

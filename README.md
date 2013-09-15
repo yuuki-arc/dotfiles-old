@@ -22,6 +22,11 @@
 1. ln -s /usr/local/Library/Contributions/brew_zsh_completion.zsh _brew
 1. rm -f ~/.zcompdump
 
+### zsh-syntax-highlighting
+1. brew install zsh-syntax-highlighting
+1. .zshrc のファイル最後に以下の行を追加  
+   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ### git
 1. brew install git
 1. export PATH=/usr/local/bin:/usr/bin:$PATH
