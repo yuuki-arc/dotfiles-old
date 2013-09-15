@@ -6,15 +6,15 @@
 1. sudo chown -R $USER /usr/local
 
 ### zsh
-1. brew install --disable-etcdir zsh
+1. brew install zsh
+1. sudo mv /etc/zshenv /etc/zprofile
 1. sudo vi /etc/shells
 1. 最後の行に追加  
    /usr/local/bin/zsh
-1. chpass -s /usr/local/bin/zsh
-1. chpass
+1. chsh -s /usr/local/bin/zsh
+1. chsh
 1. 以下の行があればOK  
    Shell: /usr/local/bin/zsh
-1. sudo cp /usr/local/Cellar/zsh/5.0.2/lib/zsh/pcre.so /usr/lib/zsh/4.3.11/zsh
 
 ### zsh-completions
 1. brew install zsh-completions
