@@ -190,6 +190,8 @@ alias su="su -l"
 
 alias ctags="/usr/local/bin/ctags"
 
+alias sshe="cocot -t UTF-8 -p EUC-JP -- ssh"
+
 ## terminal configuration
 #
 case "${TERM}" in
