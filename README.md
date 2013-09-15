@@ -5,6 +5,23 @@
 1. http://xquartz.macosforge.org/landing/ からdmgファイルをダウンロードしてインストール
 1. sudo chown -R $USER /usr/local
 
+### zsh
+1. brew install --disable-etcdir zsh
+1. sudo vi /etc/shells
+1. 最後の行に追加  
+   /usr/local/bin/zsh
+1. chpass -s /usr/local/bin/zsh
+1. chpass
+1. 以下の行があればOK  
+   Shell: /usr/local/bin/zsh
+1. sudo cp /usr/local/Cellar/zsh/5.0.2/lib/zsh/pcre.so /usr/lib/zsh/4.3.11/zsh
+
+### zsh-completions
+1. brew install zsh-completions
+1. cd /usr/local/share/zsh/site-functions
+1. ln -s /usr/local/Library/Contributions/brew_zsh_completion.zsh _brew
+1. rm -f ~/.zcompdump
+
 ### git
 1. brew install git
 1. export PATH=/usr/local/bin:/usr/bin:$PATH

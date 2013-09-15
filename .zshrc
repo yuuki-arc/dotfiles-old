@@ -50,7 +50,7 @@ esac
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 
 setopt prompt_subst
-setopt re_match_pcre
+#setopt re_match_pcre
 
 function rprompt-git-current-branch {
   local name st color gitdir action
