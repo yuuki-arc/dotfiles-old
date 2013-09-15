@@ -1,0 +1,4 @@
+#! /bin/sh
+
+tmux load-buffer - && tmux paste-buffer
+
