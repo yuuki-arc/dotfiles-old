@@ -1,6 +1,7 @@
 " neobundle.vim
 set nocompatible
-set rtp+=~/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
+" set rtp+=~/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set laststatus=2
 set t_Co=256
 
