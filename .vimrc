@@ -4,6 +4,7 @@ set nocompatible
 set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set laststatus=2
 set t_Co=256
+set number
 
 filetype plugin indent off
 
@@ -28,6 +29,10 @@ highlight CursorLine ctermbg=black guibg=black
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'git://github.com/Shougo/vimshell.git'
 NeoBundle 'git://github.com/Shougo/vimproc.git'
 NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
@@ -35,12 +40,15 @@ NeoBundle 'git://github.com/vim-scripts/taglist.vim.git'
 NeoBundle 'git://github.com/vim-scripts/TwitVim.git'
 NeoBundle 'taichouchou2/alpaca_powertabline'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 let g:lightline = {
       \ 'colorscheme': 'wombat'
       \ }
 "let g:Powerline_symbols = 'fancy'
 "let g:Powerline_symbols = 'compatible'
+
+let NERDSpaceDelims = 1
 
 """ unite.vim
 " 入力モードで開始する
@@ -66,6 +74,17 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+""" easymotion
+" ホームポジションに近いキーを使う
+let g:EasyMotion_keys='hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB'
+" 「'」 + 何かにマッピング
+let g:EasyMotion_leader_key="'"
+" 1 ストローク選択を優先する
+let g:EasyMotion_grouping=1
+" カラー設定変更
+hi EasyMotionTarget ctermbg=none ctermfg=red
+hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 filetype plugin on
 filetype indent on

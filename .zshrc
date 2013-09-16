@@ -416,6 +416,7 @@ PATH=/usr/local/mysql/bin:~/bin:/usr/local/bin:$PATH
 export PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
+export TERM=xterm-256color
 
 # ssh 時に新規ウィンドウを作る
 ssh_tmux() {

@@ -51,7 +51,6 @@
 1. pip install --user git+git://github.com/Lokaltog/powerline
 1. mkdir ~/.config
 1. cp -R ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files ~/.config/powerline
-
 1. brew link --override python
 1. fc-cache -f
 1. ~/.fonts/にあるRicty ... for Powerline.ttf をopenしてインストール
