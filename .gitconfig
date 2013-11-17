@@ -4,19 +4,14 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim -f
-[merge]
-	keepBackup = false
-	tool = p4merge
-[mergetool "p4merge"]
-	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
-[diff]
-	external = p4diff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [color]
 	ui = auto
 [alias]
 	co = checkout
 	st = status
-	br = branch
