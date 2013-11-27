@@ -30,6 +30,8 @@
 ### git
 1. brew install git
 1. export PATH=/usr/local/bin:/usr/bin:$PATH
+1. wget https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight ~/bin
+1. chmod +x ~/bin/diff-highlight
 
 ### dotfiles
 1. cd $HOME
