@@ -361,6 +361,8 @@ alias ctags="/usr/local/bin/ctags"
 
 alias sshe="cocot -t UTF-8 -p EUC-JP -- ssh"
 
+alias be="bundle exec"
+
 ## terminal configuration
 #
 case "${TERM}" in
