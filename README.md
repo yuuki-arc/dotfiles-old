@@ -50,6 +50,7 @@
 1. brew install homebrew/dupes/grep
 1. brew unlink python
 1. sudo easy_install pip
+1. sudo chown $USER /usr/local/bin/pip*
 1. pip install --user git+git://github.com/Lokaltog/powerline
 1. mkdir ~/.config
 1. cp -R ~/Library/Python/2.7/lib/python/site-packages/powerline/config_files ~/.config/powerline
