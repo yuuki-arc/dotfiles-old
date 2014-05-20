@@ -414,6 +414,7 @@ esac
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
+PATH=$HOME/.nodebrew/current/bin:$PATH
 PATH=/usr/local/mysql/bin:~/bin:/usr/local/bin:$PATH
 export PATH
 export NODE_PATH=/usr/local/lib/node_modules
