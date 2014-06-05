@@ -33,6 +33,9 @@
 1. wget https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight ~/bin
 1. chmod +x ~/bin/diff-highlight
 
+### go
+1. brew install go
+
 ### dotfiles
 1. cd $HOME
 1. git clone
