@@ -1,5 +1,5 @@
 [user]
-	name = m.yamaoka
+	name = yuuki-arc
 	email = arcs7nine@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
@@ -20,4 +20,6 @@
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[ghq]
+	root = ~/src
 

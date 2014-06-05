@@ -414,8 +414,7 @@ esac
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
-PATH=$HOME/.nodebrew/current/bin:$PATH
-PATH=/usr/local/mysql/bin:~/bin:/usr/local/bin:$PATH
+PATH=$HOME/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$PATH
 export PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
@@ -440,7 +439,15 @@ fi
 
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=/usr/local/heroku/bin:$PATH
+
+# for go lang
+if [ -x "`which go`" ]; then
+  export GOROOT=`go env GOROOT`
+  export GOPATH=$HOME
+  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+fi
+
 
 eval "$(rbenv init -)"
 
