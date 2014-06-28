@@ -1,0 +1,28 @@
+tap phinze/homebrew-cask || true
+tap homebrew/versions || true
+tap caskroom/homebrew-versions || true
+update || true
+
+install brew-cask || true
+install git || true
+install ag || true
+install tmux || true
+install zsh || true
+install hub || true
+install tig || true
+install tree || true
+install openssl || true
+
+cask install alfred || true
+cask install keyremap4macbook || true
+cask install bartender || true
+cask install dropbox || true
+cask install firefox || true
+cask install bartender || true
+cask install sourcetree || true
+cask install google-chrome || true
+cask install vagrant || true
+cask install totalfinder || true
+cask install iterm2 || true
+cask install appcleaner || true
+
