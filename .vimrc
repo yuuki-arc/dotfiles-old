@@ -5,6 +5,7 @@ set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/pl
 set laststatus=2
 set t_Co=256
 set number
+set clipboard=unnamed,autoselect
 
 filetype plugin indent off
 
