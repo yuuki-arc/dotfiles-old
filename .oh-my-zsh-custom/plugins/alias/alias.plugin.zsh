@@ -1,6 +1,7 @@
 alias test="echo test"
 alias where="command -v"
 alias j="jobs -l"
+alias g="git"
 
 case "${OSTYPE}" in
 freebsd*|darwin*)
