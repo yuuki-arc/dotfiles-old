@@ -25,7 +25,7 @@ function peco-select-history() {
     else
         tac="tail -r"
     fi
-    BUFFER=$(history -n 1 | \
+    BUFFER=$(\history -n 1 | \
         eval $tac | \
         peco --query "$LBUFFER")
     CURSOR=$#BUFFER
@@ -58,7 +58,7 @@ function percol-cdr () {
 bindkey '^r' peco-select-history
 bindkey '^@' peco-cdr
 
-function percol-cd () {
+function peco-cd () {
     local proj_root=$(find-proj-root)
     local gitignore="${proj_root}/.gitignore"
 
@@ -76,7 +76,7 @@ function percol-cd () {
     local selected_dir=$(
         cd "$proj_root" &&
         echo "find . \( $ignore_opt_str \) -prune -o -maxdepth 10 -type d -print" |
-          sh | percol --query "$LBUFFER"
+          sh | peco --query "$LBUFFER"
     )
 
     if [ -n "$selected_dir" ]; then
@@ -85,7 +85,7 @@ function percol-cd () {
     fi
     zle clear-screen
 }
-zle -N percol-cd
+zle -N peco-cd
 
-bindkey '^x'  percol-cd
+bindkey '^x'  peco-cd
 
