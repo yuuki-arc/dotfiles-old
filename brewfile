@@ -3,6 +3,7 @@ tap homebrew/versions || true
 tap caskroom/homebrew-versions || true
 update || true
 
+install brew-cask || true
 install android-sdk || true
 install apple-gcc42 || true
 install asciidoc || true
