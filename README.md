@@ -6,7 +6,7 @@
 1. sudo chown -R $USER /usr/local
 
 ### zsh
-1. brew install zsh
+1. brew install --disable-etcdir zsh
 1. sudo mv /etc/zshenv /etc/zprofile
 1. sudo vi /etc/shells
 1. 最後の行に追加  
@@ -40,6 +40,9 @@
 1. cd $HOME
 1. git clone
 1. sh -x ./dotfiles/setup.sh
+
+### gem
+1. git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src
 
 ### vim
 1. brew install vim --with-python --with-ruby --with-perl
