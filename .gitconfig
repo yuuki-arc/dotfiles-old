@@ -25,3 +25,5 @@
 
 [ghn]
 	token = fe275ea199db12ea33e5fc60dca7700dbd77d46c
+[hub]
+	protocol = https

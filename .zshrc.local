@@ -1,0 +1,4 @@
+export PUREBASIC_HOME=~/purebasic
+export PATH=$PATH:$PUREBASIC_HOME/compilers
+
+alias s='ssh $(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config|peco|awk "{print \$2}")'
