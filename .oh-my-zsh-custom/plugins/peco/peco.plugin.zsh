@@ -1,3 +1,12 @@
+function peco-function-list () {
+    local selected=$(functions | grep "^.*\ ()\ {" | sed -e "s| () {||" | grep peco- | grep -v function-list | peco --query "$LBUFFER")
+    if [ -n "$selected" ]; then
+        ${selected}
+    fi
+}
+zle -N peco-function-list
+bindkey '^f' peco-function-list
+
 function ghn_open() {
     local url=$(ghn list | peco --query "$LBUFFER")
     if [ -n "$url" ]; then
@@ -88,4 +97,43 @@ function peco-cd () {
 zle -N peco-cd
 
 bindkey '^x'  peco-cd
+
+zle -N peco-snippets
+bindkey '^x^x' peco-snippets
+
+function peco-snippets() {
+
+    local SNIPPETS=$(cat ~/.sheets/* | peco --query "$LBUFFER" | pbcopy)
+        zle clear-screen
+}
+
+zle -N peco-snippets
+bindkey '^x^s' peco-snippets
+
+#function peco-snippets() {
+#
+#    local line
+#    local snippet
+#
+#    if [ ! -e ~/.snippets ]; then
+#        echo "~/.snippets is not found." >&2
+#        return 1
+#    fi
+#
+#    line=$(grep -v "^#" ~/.snippets | peco --query "$LBUFFER")
+#    if [ -z "$line" ]; then
+#        return 1
+#    fi
+#    
+#    snippet=$(echo "$line" | sed "s/^\[[^]]*\] *//g")
+#    if [ -z "$snippet" ]; then
+#        return 1
+#    fi
+#
+#    BUFFER=$snippet
+#    zle clear-screen
+#}
+#
+#zle -N peco-snippets
+#bindkey '^x^x' peco-snippets
 
