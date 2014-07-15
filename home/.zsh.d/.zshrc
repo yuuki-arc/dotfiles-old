@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/dotfiles/.oh-my-zsh
+export ZSH=$ZDOTDIR/.oh-my-zsh
 
 # Set name of the tfriskheme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -44,7 +44,7 @@ ZSH_THEME="ark"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/dotfiles/.oh-my-zsh-custom
+ZSH_CUSTOM=$ZDOTDIR/.oh-my-zsh-custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -75,6 +75,6 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 #最後に追加
-source $HOME/dotfiles/.zshrc.mine  #自分の.zshrcを有効にする
+source $ZDOTDIR/.zshrc.mine  #自分の.zshrcを有効にする
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local # ローカルの設定を読み込む
 
