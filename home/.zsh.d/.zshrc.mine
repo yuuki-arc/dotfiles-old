@@ -1,4 +1,4 @@
-# users generic .zshrc file for zsh(1)
+# users generic .zshrc file for zsh(2)
 
 ## Environment variable configuration
 #
@@ -51,6 +51,7 @@ then
   zstyle ':chpwd:*' recent-dirs-max 5000
   zstyle ':chpwd:*' recent-dirs-default yes
   zstyle ':completion:*' recent-dirs-insert both
+  zstyle ':chpwd:*' recent-dirs-file ~/.chpwd-recent-dirs
 fi
 
 ## Keybind configuration
@@ -91,8 +92,8 @@ function history-all { history -E 1 }
 #
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-autoload -Uz compinit
-compinit -u
+autoload -Uz compinit && compinit -u -d ~/.zcompdump
+
 zstyle ':completion:*:default' menu select=2
 # 補完関数の表示を強化する
 zstyle ':completion:*' verbose yes
