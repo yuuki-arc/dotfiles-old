@@ -76,5 +76,5 @@ source $ZSH/oh-my-zsh.sh
 
 #最後に追加
 source $ZDOTDIR/.zshrc.mine  #自分の.zshrcを有効にする
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local # ローカルの設定を読み込む
+[ -f ~/.zshrc.`hostname -s` ] && source ~/.zshrc.`hostname -s` # ローカルの設定を読み込む
 
