@@ -51,6 +51,14 @@ ZSH_CUSTOM=$ZDOTDIR/.oh-my-zsh-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git themes alias peco web-search osx)
 
+## Completion configuration
+#
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+autoload -Uz compinit
+compinit -u -d ~/.zcompdump
+
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
