@@ -1,4 +1,0 @@
-install: --no-document
-update: --no-document
-gemsrc_clone_root: ~/src
-gemsrc_use_ghq: true
