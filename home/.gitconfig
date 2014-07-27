@@ -17,9 +17,9 @@
 	co = checkout
 	st = status
 [pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+	log = diff-highlight 
+	show = diff-highlight 
+	diff = diff-highlight 
 [ghq]
 	root = ~/src
 
