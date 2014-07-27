@@ -5,6 +5,8 @@ update || true
 
 install brew-cask || true
 install android-sdk || true
+install android-ndk || true
+install ant || true
 install apple-gcc42 || true
 install asciidoc || true
 install autoconf || true
@@ -81,4 +83,5 @@ cask install vagrant || true
 cask install totalfinder || true
 cask install iterm2 || true
 cask install appcleaner || true
-
+cask install evernote || true
+cask install xquartz || true
