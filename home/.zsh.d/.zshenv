@@ -28,3 +28,6 @@ if [ -d /Applications/adt-bundle-mac-x86_64-20140321 ] ; then
   export ANT_ROOT=/usr/local/bin
   export PATH=$NDK_ROOT:$PATH
 fi
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+
