@@ -1,8 +1,10 @@
+# prepare
 tap phinze/homebrew-cask || true
 tap homebrew/versions || true
 tap caskroom/homebrew-versions || true
 update || true
 
+# homebrew
 install brew-cask || true
 install android-sdk || true
 install android-ndk || true
@@ -71,17 +73,20 @@ install zsh || true
 install zsh-completions || true
 install zsh-syntax-highlighting || true
 
+#cask
 cask install alfred || true
-cask install keyremap4macbook || true
 cask install bartender || true
 cask install dropbox || true
 cask install firefox || true
 cask install bartender || true
 cask install sourcetree || true
 cask install google-chrome || true
-cask install vagrant || true
-cask install totalfinder || true
 cask install iterm2 || true
 cask install appcleaner || true
 cask install evernote || true
+
+#cask (require password)
+cask install karabiner || true
+cask install totalfinder || true
+cask install vagrant || true
 cask install xquartz || true
