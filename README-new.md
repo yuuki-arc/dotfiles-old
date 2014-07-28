@@ -1,5 +1,6 @@
 ## 最新の手順に組み込むもの
 * homesick
+* homesick after clone > git submodule update --init home/.zsh.d/.oh-my-zsh
 * brew-cask
 * pip install
 * ghq
