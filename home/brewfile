@@ -80,10 +80,13 @@ cask install dropbox || true
 cask install firefox || true
 cask install bartender || true
 cask install sourcetree || true
-cask install google-chrome || true
 cask install iterm2 || true
 cask install appcleaner || true
 cask install evernote || true
+cask install filezilla || true
+
+#cask (install specify)
+cask install --caskroom=/Applications google-chrome || true
 
 #cask (require password)
 cask install karabiner || true
