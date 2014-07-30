@@ -25,3 +25,5 @@
 	diff = diff-highlight 
 [ghq]
 	root = ~/src
+[push]
+	default = simple
