@@ -6,6 +6,26 @@
 * ghq
 * submodule (oh-my-zsh etc.)
 
+### homesick
+1. gem install homesick
+1. homesick clone yuuki-arc/dotfiles
+1. cd ~ && homesick symlink dotfiles
+
+### homesick (option)
+1. cd ~/.homesick/repos/dotfiles
+1. git config remote.origin.url
+
+### brew-cask
+1. ...
+
+### zsh / zsh-completions
+1. brew install zsh --disable-etcdir
+1. brew install zsh-completions
+1. sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+1. cat /etc/shells
+1. chsh -s /usr/local/bin/zsh
+
+
 
 ## インストール（旧手順）
 ### homebrew
