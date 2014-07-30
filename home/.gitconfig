@@ -25,5 +25,3 @@
 	diff = diff-highlight 
 [ghq]
 	root = ~/src
-[hub]
-	protocol = https
