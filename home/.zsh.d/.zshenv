@@ -19,7 +19,7 @@ if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.1.1 ] ; then
 fi
 
 # Add environment variable NDK_ROOT for cocos2d-x
-if [ -d /Applications/adt-bundle-mac-x86_64-20140321 ] ; then
+if [ -d /Applications/adt-bundle/adt-bundle-mac-x86_64-20140702 ] ; then
 #  export NDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/android-ndk-r9d
 #  export ANDROID_SDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/sdk
 #  export ANT_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/sdk/tools

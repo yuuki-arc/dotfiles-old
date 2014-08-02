@@ -5,7 +5,7 @@ function peco-function-list () {
     fi
 }
 zle -N peco-function-list
-bindkey '^f' peco-function-list
+bindkey '^l' peco-function-list
 
 function ghn_open() {
     local url=$(ghn list | peco --query "$LBUFFER")
