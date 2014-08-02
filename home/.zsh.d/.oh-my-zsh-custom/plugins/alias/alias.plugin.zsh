@@ -1,4 +1,3 @@
-alias test="echo test"
 alias where="command -v"
 alias j="jobs -l"
 
@@ -31,6 +30,7 @@ eval "$(hub alias -s)"
 alias g="git"
 alias gc="git commit -v"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gba="git branch -a"
 alias ga="git add"
 alias gm="git merge"
@@ -49,4 +49,4 @@ alias gsd="gs && gd"
 alias gsa="gs && ga"
 alias gsco="gs && gc"
 alias gsrh="gs && grh"
-
+alias gbrs="git browse"
