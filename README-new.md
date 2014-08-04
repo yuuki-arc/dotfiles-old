@@ -25,7 +25,24 @@
 1. cat /etc/shells
 1. chsh -s /usr/local/bin/zsh
 
+### Xcode (+Cocos2d-x)
 
+#### Xcode
+```sh
+$ ghq get mduvall/flatland-xcode
+$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
+$ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
+XCodeを起動してテーマ変更＆フォントMenlo 13pt
+```
+
+#### Cocos2d-x templates
+```sh
+$ ghq get anzfactory/XcodeTemplates
+$ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
+$ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+$ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+```
 
 ## インストール（旧手順）
 ### homebrew
