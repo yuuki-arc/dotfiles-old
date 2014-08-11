@@ -43,6 +43,9 @@ setopt noautoremoveslash
 #
 setopt nolistbeep
 
+# 補完時に濁点・半濁点を <3099> <309a> のように表示させない
+setopt combining_chars
+
 #----- cdr
 autoload -Uz is-at-least
 if is-at-least 4.3.11
