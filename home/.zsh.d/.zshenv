@@ -13,8 +13,8 @@ fi
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.1.1 ] ; then
-  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.1.1/tools/cocos2d-console/bin
+if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.2 ] ; then
+  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.2/tools/cocos2d-console/bin
   export PATH=$COCOS_CONSOLE_ROOT:$PATH
 fi
 
