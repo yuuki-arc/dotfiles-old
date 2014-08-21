@@ -22,11 +22,13 @@
 1. sh home/brewfile.sh
 
 ### zsh / zsh-completions
-1. brew install zsh --disable-etcdir
-1. brew install zsh-completions
+1. ~~brew install zsh --disable-etcdir~~
+1. ~~brew install zsh-completions~~
 1. sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 1. cat /etc/shells
 1. chsh -s /usr/local/bin/zsh
+
+(ここまで想定通りに進むことを確認）
 
 ### Xcode (+Cocos2d-x)
 
