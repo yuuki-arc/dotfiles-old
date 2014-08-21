@@ -1,22 +1,25 @@
 ## 最新の手順に組み込むもの
-* homesick
-* homesick after clone > git submodule update --init home/.zsh.d/.oh-my-zsh
-* brew-cask
 * pip install
 * ghq
 * submodule (oh-my-zsh etc.)
 
 ### homesick
-1. gem install homesick
+1. (sudo) gem install homesick
+1. xcode-select --install
 1. homesick clone yuuki-arc/dotfiles
 1. cd ~ && homesick symlink dotfiles
+1. git submodule update --init home/.zsh.d/.oh-my-zsh
 
 ### homesick (option)
 1. cd ~/.homesick/repos/dotfiles
 1. git config remote.origin.url
 
+### homebrew
+1. ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+1. brew doctor
+
 ### brew-cask
-1. ...
+1. sh home/brewfile.sh
 
 ### zsh / zsh-completions
 1. brew install zsh --disable-etcdir
