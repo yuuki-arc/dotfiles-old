@@ -24,6 +24,12 @@ alias ctags="/usr/local/bin/ctags"
 alias sshe="cocot -t UTF-8 -p EUC-JP -- ssh"
 
 alias be="bundle exec"
+alias bi="bundle install --path vendor/bundle"
+alias bu="bundle update"
+
+alias mdl="bundle exec middleman"
+alias mdld="bundle exec middleman deploy"
+alias mdlb="bundle exec middleman build"
 
 eval "$(hub alias -s)"
 
