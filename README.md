@@ -34,6 +34,7 @@
 
 #### Xcode
 ```sh
+$ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 $ ghq get mduvall/flatland-xcode
 $ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
 $ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
