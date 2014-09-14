@@ -76,6 +76,9 @@ brew install xz
 brew install zsh
 brew install zsh-completions
 brew install zsh-syntax-highlighting
+brew install doxygen
+brew install libpng
+brew install graphviz
 
 #cask
 brew cask install alfred
