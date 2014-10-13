@@ -235,6 +235,8 @@ if [ -x "`which go`" ]; then
   export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 fi
 
+# homebrew-file
+#export HOMEBREW_BREWFILE=~/src/github.com/yuuki-arc/Brewfile/Brewfile
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
