@@ -4,6 +4,10 @@ export PATH
 # Added by the Heroku Toolbelt
 export PATH=/usr/local/heroku/bin:$PATH
 
+if [ -d ${HOME}/.phpenv ] ; then
+  export PATH="$HOME/.phpenv/bin:$PATH"
+  eval "$(phpenv init - zsh)"
+fi
 
 if [ -d ${HOME}/.rbenv  ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"

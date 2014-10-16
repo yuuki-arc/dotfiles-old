@@ -50,6 +50,11 @@ $ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
 $ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
 ```
 
+#### phpenv
+```sh
+$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
+```
+
 ## インストール（旧手順）
 ### homebrew
 1. ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
