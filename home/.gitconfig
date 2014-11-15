@@ -12,7 +12,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/Caskroom/sourcetree/1.9.6/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /usr/local/Caskroom/sourcetree/2.0.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [color]
 	ui = auto
@@ -29,3 +29,7 @@
 	default = simple
 [hub]
 	host = 
+[github]
+	user = yuuki-arc
+[ghi]
+	token = !security find-internet-password -a  -s github.com -l 'ghi token' -w
