@@ -3,16 +3,46 @@
 * ghq
 * submodule (oh-my-zsh etc.)
 
-### homesick
-1. (sudo) gem install homesick
+### Generating SSH keys
+
+#### SSH公開鍵の作成
+githubからセットアップ情報を取得するのでSSH接続するための設定を行う。
+参考: https://help.github.com/articles/generating-ssh-keys/
+
+```console
+$ ssh-keygen -t rsa -C hoge@hoge.com -f ~/.ssh/github_rsa
+※passphraseは空でいいので何も入力しないでそのままEnterを押す
+
+$ cat ~/.ssh/github_rsa.pub >> ~/.ssh/authorized_keys
+$ chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+$ echo "IdentityFile ~/.ssh/github_rsa" >> ~/.ssh/config
+
+$ eval “$(ssh-agent -s)”
+$ ssh-add ~/.ssh/github_rsa
+```
+
+#### SSH公開鍵をgithubに登録
+
+```console
+$ pbcopy < ~/.ssh/github_rsa.pub
+```
+
+githubの[SSH keys](https://github.com/settings/ssh)ページで **Add SSH Key** ボタンで登録
+
+
+### pre-install
 1. xcode-select --install
+
+### homesick
+
+#### インストール
+1. sudo gem install homesick
 1. homesick clone yuuki-arc/dotfiles
 1. cd ~ && homesick symlink dotfiles
-1. source ~/.bash_profile
+
+#### セットアップ
 1. homesick cd dotfiles
 1. git submodule update --init home/.zsh.d/.oh-my-zsh
-
-### homesick (option)
 1. git config remote.origin.url
 
 ### homebrew
