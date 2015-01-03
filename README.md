@@ -29,6 +29,8 @@ githubの[SSH keys](https://github.com/settings/ssh)ページで **Add SSH Key**
 
 ### pre-install
 1. xcode-select --install
+1. sudo xcodebuild -license
+  * `license agreements` が表示されるので `agree` を入力してEnterを押す
 
 ### homesick
 
@@ -42,12 +44,31 @@ githubの[SSH keys](https://github.com/settings/ssh)ページで **Add SSH Key**
 1. git submodule update --init home/.zsh.d/.oh-my-zsh
 1. git config remote.origin.url
 
-### homebrew
-1. ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-1. brew doctor
+### Brew-file（同時にhomebrewもインストールされる）
+1. curl -fsSL https://raw.github.com/rcmdnk/homebrew-file/install/install.sh |sh
+1. brew file set_repo -r yuuki-arc/Brewfile
+1. export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+1. brew file update
+  * 依存関係でひっかかるアプリがあるのでその都度個別に `brew install` する
+  * サービスの自動起動設定を個別に行う
 
-### brew-cask
-1. sh home/brewfile.sh
+```
+ln -sfv /usr/local/opt/mysql55/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+```
+
+### ~~homebrew~~
+1. ~~ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"~~
+1. ~~brew doctor~~
+
+### ~~brew-cask~~
+1. ~~sh home/brewfile.sh~~
+
+### misc
+1. Dropboxを設定
 
 ### zsh / zsh-completions
 1. ~~brew install zsh --disable-etcdir~~
