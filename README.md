@@ -8,14 +8,15 @@
 1. xcode-select --install
 1. homesick clone yuuki-arc/dotfiles
 1. cd ~ && homesick symlink dotfiles
+1. source ~/.bash_profile
+1. homesick cd dotfiles
 1. git submodule update --init home/.zsh.d/.oh-my-zsh
 
 ### homesick (option)
-1. cd ~/.homesick/repos/dotfiles
 1. git config remote.origin.url
 
 ### homebrew
-1. ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+1. ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 1. brew doctor
 
 ### brew-cask
