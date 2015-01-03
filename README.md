@@ -16,9 +16,6 @@ $ ssh-keygen -t rsa -C hoge@hoge.com -f ~/.ssh/github_rsa
 $ cat ~/.ssh/github_rsa.pub >> ~/.ssh/authorized_keys
 $ chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
 $ echo "IdentityFile ~/.ssh/github_rsa" >> ~/.ssh/config
-
-$ eval “$(ssh-agent -s)”
-$ ssh-add ~/.ssh/github_rsa
 ```
 
 #### SSH公開鍵をgithubに登録
