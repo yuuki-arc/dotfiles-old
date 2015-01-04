@@ -96,38 +96,13 @@ iTerm2の設定もリストアされたので、以降の手順についてはiT
 
 ## 4. 周辺ツールのインストール
 
-### gem
-1. git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src
-
-### phpenv
-```sh
-$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
-```
-### vim
-1. brew install vim --with-python --with-ruby --with-perl
-
-### ~~vim - NeoBundleInstall~~（Mackupでリストア済みのため必要ない手順）
-1. ~~git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim~~
-1. ~~:NeoBundleInstall~~
-
-### ~~Xcode (+Cocos2d-x)~~ （Mackupでリストア済みのため必要ない手順）
-
-#### ~~Xcode~~
-```sh
-$ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
-$ ghq get mduvall/flatland-xcode
-$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
-$ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
-
-XCodeを起動してテーマ変更＆フォントMenlo 13pt
-```
-
-#### ~~Cocos2d-x templates~~
-```sh
-$ ghq get anzfactory/XcodeTemplates
-$ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
-$ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
-$ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+```console
+$ git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src #gem
+$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv #phpenv
+$ brew install vim --with-python --with-ruby --with-perl #vim
+$ brew cask install --caskroom=/Applications google-chrome
+$ brew cask install --caskroom=/Applications firefox-ja
+$ brew cask alfred link
 ```
 
 ## インストール（旧手順）
@@ -196,3 +171,23 @@ $ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
 1. fc-cache -f
 1. ~/.fonts/にあるRicty ... for Powerline.ttf をopenしてインストール
 1. iTerm2の環境設定でフォントを選択
+
+### Xcode (+Cocos2d-x)
+
+#### Xcode
+```sh
+$ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+$ ghq get mduvall/flatland-xcode
+$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
+$ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
+XCodeを起動してテーマ変更＆フォントMenlo 13pt
+```
+
+#### Cocos2d-x templates
+```sh
+$ ghq get anzfactory/XcodeTemplates
+$ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
+$ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+$ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+```
