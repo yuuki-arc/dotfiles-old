@@ -1,7 +1,4 @@
-## 最新の手順に組み込むもの
-* pip install
 * ghq
-* submodule (oh-my-zsh etc.)
 
 ### Generating SSH keys
 
@@ -72,7 +69,23 @@ ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 1. cat /etc/shells
 1. chsh -s /usr/local/bin/zsh
 
-(ここまで想定通りに進むことを確認）
+### 以降はiterm2で
+
+### gem
+1. git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src
+
+### vim
+1. brew install vim --with-python --with-ruby --with-perl
+
+### vim - NeoBundleInstall
+1. git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
+1. :NeoBundleInstall
+
+### phpenv
+```sh
+$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
+```
+### pip（デフォルトインストール済みだった）
 
 ### Xcode (+Cocos2d-x)
 
@@ -92,11 +105,6 @@ $ ghq get anzfactory/XcodeTemplates
 $ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
 $ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
 $ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
-```
-
-#### phpenv
-```sh
-$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
 ```
 
 ## インストール（旧手順）
