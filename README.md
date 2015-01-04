@@ -33,16 +33,9 @@ githubの[SSH keys](https://github.com/settings/ssh)ページで **Add SSH Key**
   * `license agreements` が表示されるので `agree` を入力してEnterを押す
 
 ### homesick
-
-#### インストール
 1. sudo gem install homesick
-1. homesick clone yuuki-arc/dotfiles
-1. cd ~ && homesick symlink dotfiles
-
-#### セットアップ
-1. homesick cd dotfiles
-1. git submodule update --init home/.zsh.d/.oh-my-zsh
-1. git config remote.origin.url
+1. homesick clone git@github.com:yuuki-arc/dotfiles.git ※SSHで取得するため
+1. homesick symlink dotfiles
 
 ### Brew-file（同時にhomebrewもインストールされる）
 1. curl -fsSL https://raw.github.com/rcmdnk/homebrew-file/install/install.sh |sh
