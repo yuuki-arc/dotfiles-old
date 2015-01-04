@@ -1,5 +1,3 @@
-* ghq
-
 ### Generating SSH keys
 
 #### SSH公開鍵の作成
@@ -59,8 +57,8 @@ ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 
 ### misc
 1. Dropboxを設定
-1. ~~pip install mackup~~
-1. ~~mackup restore~~
+1. pip install mackup ※pipはデフォルトでインストール済みの模様
+1. mackup restore
 
 ### zsh / zsh-completions
 1. ~~brew install zsh --disable-etcdir~~
@@ -85,11 +83,9 @@ ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 ```sh
 $ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
 ```
-### pip（デフォルトインストール済みだった）
+### ~~Xcode (+Cocos2d-x)~~
 
-### Xcode (+Cocos2d-x)
-
-#### Xcode
+#### ~~Xcode~~
 ```sh
 $ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 $ ghq get mduvall/flatland-xcode
@@ -99,7 +95,7 @@ $ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorTheme
 XCodeを起動してテーマ変更＆フォントMenlo 13pt
 ```
 
-#### Cocos2d-x templates
+#### ~~Cocos2d-x templates~~
 ```sh
 $ ghq get anzfactory/XcodeTemplates
 $ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
