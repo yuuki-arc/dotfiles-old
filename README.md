@@ -62,8 +62,8 @@ ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 
 ### misc
 1. Dropboxを設定
-1. pip install mackup
-1. mackup restore
+1. ~~pip install mackup~~
+1. ~~mackup restore~~
 
 ### zsh / zsh-completions
 1. ~~brew install zsh --disable-etcdir~~
