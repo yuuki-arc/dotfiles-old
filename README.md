@@ -1,13 +1,10 @@
-## 最新の手順に組み込むもの
-* pip install
-* ghq
-* submodule (oh-my-zsh etc.)
+## 1. セットアップ準備
 
-### Generating SSH keys
-
-#### SSH公開鍵の作成
-githubからセットアップ情報を取得するのでSSH接続するための設定を行う。
+### SSH公開鍵
+githubからセットアップ情報を取得するのでSSH接続するため鍵の作成を行う。  
 参考: https://help.github.com/articles/generating-ssh-keys/
+
+#### 作成
 
 ```console
 $ ssh-keygen -t rsa -C hoge@hoge.com -f ~/.ssh/github_rsa
@@ -26,25 +23,44 @@ $ pbcopy < ~/.ssh/github_rsa.pub
 
 githubの[SSH keys](https://github.com/settings/ssh)ページで **Add SSH Key** ボタンで登録
 
+### Xcode関連のインストール
+この後のdotfiles環境構築するにあたって、
+Xcode及びCommand Line Toolsが入っていることが前提となるため事前にインストールする。
 
-### pre-install
-1. xcode-select --install
-1. sudo xcodebuild -license
-  * `license agreements` が表示されるので `agree` を入力してEnterを押す
+```console
+$ xcode-select --install
+$ sudo xcodebuild -license
+※ `license agreements` が表示されるので `agree` を入力してEnterを押す
+```
 
-### homesick
-1. sudo gem install homesick
-1. homesick clone git@github.com:yuuki-arc/dotfiles.git ※SSHで取得するため
-1. homesick symlink dotfiles
+## 2. dotfilesをベースに環境構築
 
-### Brew-file（同時にhomebrewもインストールされる）
-1. curl -fsSL https://raw.github.com/rcmdnk/homebrew-file/install/install.sh |sh
-1. brew file set_repo -r yuuki-arc/Brewfile
-1. export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
-1. brew file update
-  * 依存関係でひっかかるアプリがあるのでその都度個別に `brew install` する
-  * サービスの自動起動設定を個別に行う
+### homesickインストール
+homesickを使ってdotfilesをローカルにクローンする。
 
+```console
+$ sudo gem install homesick
+$ homesick clone git@github.com:yuuki-arc/dotfiles.git ※SSHで取得するため
+$ homesick symlink dotfiles
+```
+
+### Brew-fileでアプリの一括インストール
+homebrewパッケージ管理には[Brew-file](https://github.com/rcmdnk/homebrew-file)を使っているので
+下記の手順でインストールする。
+※homebrewとbrew-caskはBrew-fileのインストールと同時に入るため明示的に入れなくてもOK。
+
+```console
+$ curl -fsSL https://raw.github.com/rcmdnk/homebrew-file/install/install.sh |sh
+$ brew file set_repo -r yuuki-arc/Brewfile
+$ export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+$ brew file update
+```
+
+下記の点に関しては今後の改善材料。
+* 依存関係でひっかかるアプリがあるのでその都度個別に `brew install` しないといけない
+* サービスの自動起動設定(※)は個別に行う
+
+#### ※ サービスの自動起動設定
 ```
 ln -sfv /usr/local/opt/mysql55/*.plist ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents
@@ -53,50 +69,40 @@ ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
 ```
 
-### ~~homebrew~~
-1. ~~ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"~~
-1. ~~brew doctor~~
+### シェルをzshに切り替え
+これまでの手順で必要なものは揃ってるので下記のコマンドをうてばOK。
 
-### ~~brew-cask~~
-1. ~~sh home/brewfile.sh~~
-
-### misc
-1. Dropboxを設定
-1. pip install mackup
-1. mackup restore
-
-### zsh / zsh-completions
-1. ~~brew install zsh --disable-etcdir~~
-1. ~~brew install zsh-completions~~
-1. sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-1. cat /etc/shells
-1. chsh -s /usr/local/bin/zsh
-
-(ここまで想定通りに進むことを確認）
-
-### Xcode (+Cocos2d-x)
-
-#### Xcode
-```sh
-$ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
-$ ghq get mduvall/flatland-xcode
-$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
-$ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
-
-XCodeを起動してテーマ変更＆フォントMenlo 13pt
+```console
+$ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+$ cat /etc/shells
+$ chsh -s /usr/local/bin/zsh
 ```
 
-#### Cocos2d-x templates
-```sh
-$ ghq get anzfactory/XcodeTemplates
-$ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
-$ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
-$ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+## 3. Mackupでアプリ毎の設定をリストア
+アプリ毎に設定している内容を[Mackup](https://github.com/lra/mackup)を使ってリストアする。
+Dropboxで同期しているので、最初にDropboxでローカルに同期しておく。  
+※ Mackup管理のファイルがhomesick管理のファイルとバッティングする可能性があることに注意。
+（Mackupでどのファイルがリストアされるか、アプリごとに確認しておく）
+
+1. Dropboxのアプリを起動してローカルにファイルを同期する
+2. Mackupでリストアする
+
+```
+$ pip install mackup ※pipはデフォルトでインストール済みの模様
+$ mackup restore
 ```
 
-#### phpenv
-```sh
-$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
+iTerm2の設定もリストアされたので、以降の手順についてはiTerm2を起動して作業してもよい。
+
+## 4. 周辺ツールのインストール
+
+```console
+$ git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src #gem
+$ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv #phpenv
+$ brew install vim --with-python --with-ruby --with-perl #vim
+$ brew cask install --caskroom=/Applications google-chrome
+$ brew cask install --caskroom=/Applications firefox-ja
+$ brew cask alfred link
 ```
 
 ## インストール（旧手順）
@@ -165,3 +171,23 @@ $ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv
 1. fc-cache -f
 1. ~/.fonts/にあるRicty ... for Powerline.ttf をopenしてインストール
 1. iTerm2の環境設定でフォントを選択
+
+### Xcode (+Cocos2d-x)
+
+#### Xcode
+```sh
+$ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+$ ghq get mduvall/flatland-xcode
+$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
+$ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+
+XCodeを起動してテーマ変更＆フォントMenlo 13pt
+```
+
+#### Cocos2d-x templates
+```sh
+$ ghq get anzfactory/XcodeTemplates
+$ mkdir -p ~/Library/Developer/Xcode/Templates/File\ Templates
+$ cp -r cocos2d-x\ v2.2.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+$ cp -r cocos2d-x\ v3.0.x ~/Library/Developer/Xcode/Templates/File\ Templates/
+```
