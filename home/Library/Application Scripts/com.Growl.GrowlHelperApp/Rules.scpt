@@ -5,11 +5,15 @@ using terms from application "Growl"
         set title to "\\" & notification's note title
         set description to "\\" & notification's note description
         set appname to notification's app name
-        try
-            set appid to the id of application appname
-        on error
-            set appid to the id of application "Growl"
-        end try
+        if appname = "FluidApp" then
+            set appid to the id of application "Fluid"
+        else
+            try
+                set appid to the id of application appname
+            on error
+                set appid to the id of application "Growl"
+            end try
+        end if
 
         -- Tell `terminal-notifier` to send notification.
         do shell script "/usr/local/bin/terminal-notifier -title " & quoted form of title ¬
