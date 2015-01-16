@@ -96,6 +96,15 @@ iTerm2の設定もリストアされたので、以降の手順についてはiT
 
 ## 4. 周辺ツールのインストール
 
+### Powerline & Rictyフォント
+```console
+$ pip install --user psutil
+$ pip install --user git+git://github.com/Lokaltog/powerline
+$ cp -f /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/
+$ fc-cache -vf
+```
+
+### その他
 ```console
 $ git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src #gem
 $ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv #phpenv
@@ -104,6 +113,8 @@ $ brew cask install --caskroom=/Applications google-chrome
 $ brew cask install --caskroom=/Applications firefox-ja
 $ brew cask alfred link
 ```
+
+
 
 ## インストール（旧手順）
 ### homebrew
@@ -178,7 +189,7 @@ $ brew cask alfred link
 ```sh
 $ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 $ ghq get mduvall/flatland-xcode
-$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes 
+$ mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes
 $ cp Flatland.dvtcolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
 
 XCodeを起動してテーマ変更＆フォントMenlo 13pt
