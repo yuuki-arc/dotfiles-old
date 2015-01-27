@@ -1,4 +1,4 @@
-PATH=$HOME/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$PATH
+PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$PATH
 export PATH
 
 # Added by the Heroku Toolbelt
@@ -48,3 +48,6 @@ source ~/.phpbrew/bashrc
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 export EDITOR=vim
+export SYS_NOTIFIER=`which terminal-notifier`
+#export GROWL_NOTIFIER=`which growlnotify`
+export NOTIFY_COMMAND_COMPLETE_TIMEOUT=20
