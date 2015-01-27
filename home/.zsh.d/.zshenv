@@ -4,10 +4,10 @@ export PATH
 # Added by the Heroku Toolbelt
 export PATH=/usr/local/heroku/bin:$PATH
 
-if [ -d ${HOME}/.phpenv ] ; then
-  export PATH="$HOME/.phpenv/bin:$PATH"
-  eval "$(phpenv init - zsh)"
-fi
+#if [ -d ${HOME}/.phpenv ] ; then
+#  export PATH="$HOME/.phpenv/bin:$PATH"
+#  eval "$(phpenv init - zsh)"
+#fi
 
 if [ -d ${HOME}/.rbenv  ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
@@ -36,6 +36,15 @@ if [ -d /Applications/adt-bundle/adt-bundle-mac-x86_64-20140702 ] ; then
   export ANT_ROOT=/usr/local/bin
   export PATH=$NDK_ROOT:$PATH
 fi
+
+# boot2docker
+export DOCKER_CERT_PATH=${HOME}/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+
+#phpbrew
+export PHPBREW_SET_PROMPT=1
+source ~/.phpbrew/bashrc
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 export EDITOR=vim

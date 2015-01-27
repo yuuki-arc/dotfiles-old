@@ -67,6 +67,7 @@ ln -sfv /usr/local/opt/jenkins/*.plist ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
 ```
 
 ### シェルをzshに切り替え
