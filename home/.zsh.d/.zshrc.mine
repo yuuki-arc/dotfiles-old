@@ -206,7 +206,7 @@ esac
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
-export NODE_PATH=/usr/local/lib/node_modules
+export NODE_PATH=${HOME}/.nodebrew/current/lib/node_modules
 export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
 export TERM=xterm-256color
 
