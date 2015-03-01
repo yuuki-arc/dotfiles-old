@@ -106,6 +106,22 @@ $ fc-cache -vf
 ```
 
 ### その他
+#### nodebrew
+```console
+$ curl -L git.io/nodebrew | perl - setup
+$ source ${ZDOTDIR}/.zshrc
+$ nodebrew install-binary v0.12.0
+```
+
+#### phpbrew
+```console
+$ curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew
+$ chmod +x phpbrew
+$ sudo mv phpbrew /usr/bin/phpbrew
+$ phpbrew init
+```
+
+#### misc
 ```console
 $ git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src #gem
 $ git clone https://github.com/laprasdrum/phpenv.git ~/.phpenv #phpenv
