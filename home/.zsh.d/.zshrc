@@ -6,7 +6,7 @@ export ZSH=$ZDOTDIR/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="eastwood"
-ZSH_THEME="ark"
+ZSH_THEME="yua"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -85,4 +85,3 @@ source $ZSH/oh-my-zsh.sh
 #最後に追加
 source $ZDOTDIR/.zshrc.mine  #自分の.zshrcを有効にする
 [ -f ~/.zshrc.`hostname -s` ] && source ~/.zshrc.`hostname -s` # ローカルの設定を読み込む
-

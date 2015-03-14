@@ -99,8 +99,8 @@ iTerm2の設定もリストアされたので、以降の手順についてはiT
 
 ### Powerline & Rictyフォント
 ```console
-$ pip install --user psutil
-$ pip install --user git+git://github.com/Lokaltog/powerline
+$ ## brew tap sanemat/font
+$ ## brew reinstall -—powerline -—vim-powerline ricty
 $ cp -f /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/
 $ fc-cache -vf
 ```
