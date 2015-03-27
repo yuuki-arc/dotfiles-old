@@ -129,6 +129,7 @@ $ brew install vim --with-python --with-ruby --with-perl #vim
 $ brew cask install --caskroom=/Applications google-chrome
 $ brew cask install --caskroom=/Applications firefox-ja
 $ brew cask alfred link
+$ brew link openssl --force
 ```
 
 
