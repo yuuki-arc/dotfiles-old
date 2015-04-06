@@ -7,25 +7,25 @@ function peco-function-list () {
 zle -N peco-function-list
 bindkey '^l' peco-function-list
 
-# function ghn_open() {
-#     local url=$(ghn list | peco --query "$LBUFFER")
-#     if [ -n "$url" ]; then
-#         open ${url}
-#     fi
-# }
-# zle -N ghn_open
-# bindkey '^o' ghn_open
+function ghn_open() {
+    local url=$(ghn list | peco --query "$LBUFFER")
+    if [ -n "$url" ]; then
+        open ${url}
+    fi
+}
+zle -N ghn_open
+bindkey '^o' ghn_open
 
-# function peco-src() {
-#     local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
-#     if [ -n "$selected_dir" ]; then
-#         BUFFER="cd ${selected_dir}"
-#         zle accept-line
-#     fi
-#     zle clear-screen
-# }
-# zle -N peco-src
-# bindkey '^S' peco-src
+function peco-src() {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^S' peco-src
 
 function peco-select-history() {
     local tac
