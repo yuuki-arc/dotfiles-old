@@ -240,3 +240,8 @@ fi
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+# cygwin
+if [[ "$OSTYPE" =~ cygwin ]];then
+  export CYGWIN="winsymlinks $CYGWIN"
+fi
+
