@@ -243,5 +243,6 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 # cygwin
 if [[ "$OSTYPE" =~ cygwin ]];then
   export CYGWIN="winsymlinks $CYGWIN"
+  export SVN_SSH=/usr/bin/ssh.exe
 fi
 
