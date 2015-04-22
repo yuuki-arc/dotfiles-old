@@ -23,8 +23,31 @@ return
 
 sc073::_
 
-#UseHook off
+<^Tab::AltTab
+>^Tab::AltTab
+<^Tab::AltTab
 
+!Tab::Send {LCtrl down}{Tab}{LCtrl up}
++!Tab::Send {Shift down}{LCtrl down}{Tab}{LCtrl up}{Shift up}
+
+;<!Tab::
+;  GetKeyState, state, Ctrl
+;  if state = U
+;    Send,{Ctrl}{Tab}
+;  else if state = D
+;    Send,{Ctrl}{Tab}
+;     return
+
+;>+<^Tab::ShiftAltTab
+
+#IF WinActive("ahk_class TMobaXtermForm")
+
+!c::Send {LCtrl down}{Ins}{LCtrl up}
+!v::Send {Shift down}{Ins}{Shift up}
+ 
+#IF
+
+#UseHook off
 
 ;;LCtrl & Tab::
 ;;  If GetKeyState("+", "P")
