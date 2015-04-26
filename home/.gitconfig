@@ -29,8 +29,6 @@
 	root = ~/src
 [push]
 	default = simple
-[hub]
-	host = 
 [github]
 	user = yuuki-arc
 [ghi]
