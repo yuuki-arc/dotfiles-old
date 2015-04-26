@@ -1,3 +1,4 @@
+SHELL=`which zsh`
 PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$PATH
 export PATH
 

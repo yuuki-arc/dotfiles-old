@@ -1,7 +1,7 @@
 " neobundle.vim
 set nocompatible
 " set rtp+=~/.config/powerline/powerline/bindings/vim/plugin/powerline.vim
-set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+"set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 set laststatus=2
 set t_Co=256
 set number
@@ -11,7 +11,9 @@ filetype plugin indent off
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    call neobundle#begin(expand('~/.vim/bundle/'))
+    NeoBundleFetch 'Shougo/neobundle.vim'
+    call neobundle#end()
 endif
 
 " カーソル行をハイライト
