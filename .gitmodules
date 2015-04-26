@@ -1,4 +1,4 @@
-[submodule ".oh-my-zsh"]
+[submodule "home/.zsh.d/.oh-my-zsh"]
         path = home/.zsh.d/.oh-my-zsh
         url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "home/.zsh.d/.oh-my-zsh-custom/plugins/zsh-notify"]
