@@ -43,11 +43,15 @@ export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
 
 #phpbrew
-#export PHPBREW_SET_PROMPT=1
-#source ~/.phpbrew/bashrc
+if [ -d ${HOME}/.phpbrew ] ; then
+  export PHPBREW_SET_PROMPT=1
+  source $HOME/.phpbrew/bashrc
+fi
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 export EDITOR=vim
-#export SYS_NOTIFIER=`which terminal-notifier`
 #export GROWL_NOTIFIER=`which growlnotify`
-#export NOTIFY_COMMAND_COMPLETE_TIMEOUT=20
+if [ -x terminal-notifier ] ; then
+  export SYS_NOTIFIER=`which terminal-notifier`
+  export NOTIFY_COMMAND_COMPLETE_TIMEOUT=20
+fi
