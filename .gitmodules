@@ -1,9 +1,9 @@
 [submodule "home/.zsh.d/.oh-my-zsh"]
         path = home/.zsh.d/.oh-my-zsh
-        url = https://github.com/robbyrussell/oh-my-zsh.git
+        url = git@github.com:robbyrussell/oh-my-zsh.git
 [submodule "home/.zsh.d/.oh-my-zsh-custom/plugins/zsh-notify"]
 	path = home/.zsh.d/.oh-my-zsh-custom/plugins/zsh-notify
-	url = https://github.com/marzocchi/zsh-notify.git
+	url = git@github.com:marzocchi/zsh-notify.git
 [submodule "home/.zsh.d/.oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
 	path = home/.zsh.d/.oh-my-zsh-custom/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
