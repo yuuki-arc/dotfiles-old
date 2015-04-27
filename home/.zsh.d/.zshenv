@@ -56,3 +56,10 @@ if [ -x terminal-notifier ] ; then
   export SYS_NOTIFIER=`which terminal-notifier`
   export NOTIFY_COMMAND_COMPLETE_TIMEOUT=20
 fi
+
+# cygwin
+if [[ "$OSTYPE" =~ cygwin ]];then
+  export CYGWIN="winsymlinks $CYGWIN"
+  export SVN_SSH=/usr/bin/ssh.exe
+fi
+
