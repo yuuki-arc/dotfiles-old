@@ -8,7 +8,7 @@ githubからセットアップ情報を取得するのでSSH接続するため�
 
 ```console
 $ ssh-keygen -t rsa -C hoge@hoge.com -f ~/.ssh/github_rsa
-※passphraseは空でいいので何も入力しないでそのままEnterを押す
+※passphraseは空でいいので何も入力しないでそのままEnterを押す
 
 $ cat ~/.ssh/github_rsa.pub >> ~/.ssh/authorized_keys
 $ chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
