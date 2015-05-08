@@ -38,7 +38,7 @@ Ctrl & Tab::
 ;>^Tab::AltTab
 
 
-#IF WinActive("ahk_class TMobaXtermForm")
+#IF WinActive("ahk_class TMobaXtermForm") || WinActive("ahk_class mintty") 
 
 !c::Send {LCtrl down}{Ins}{LCtrl up}
 !v::Send {Shift down}{Ins}{Shift up}
