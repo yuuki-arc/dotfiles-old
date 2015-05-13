@@ -6,7 +6,7 @@ export ZSH=$ZDOTDIR/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="eastwood"
-ZSH_THEME="bullet-train"
+ZSH_THEME="yuawin"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -49,11 +49,11 @@ ZSH_CUSTOM=$ZDOTDIR/.oh-my-zsh-custom
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#if [[ "$OSTYPE" =~ cygwin ]];then
-#  plugins=(git themes alias peco notify web-search zsh-syntax-highlighting)
-#else
+if [[ "$OSTYPE" =~ cygwin ]];then
+  plugins=(git themes alias peco web-search zsh-syntax-highlighting)
+else
   plugins=(git themes alias peco notify web-search osx zsh-syntax-highlighting)
-#fi
+fi
 
 ## Completion configuration
 #

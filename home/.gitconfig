@@ -8,8 +8,8 @@
 	excludesfile = ~/.gitignore_global
 	editor = vim -f
 	precomposeunicode = true
-	preloadindex = true
-	fscache = true
+        preloadindex = true
+        fscache = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -29,8 +29,6 @@
 	root = ~/src
 [push]
 	default = simple
-[hub]
-	host = 
 [github]
 	user = yuuki-arc
 [ghi]

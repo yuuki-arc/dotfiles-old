@@ -2,6 +2,9 @@
 ;ref. https://www.snip2code.com/Snippet/55975/------------------AutoHotKey------
 
 #UseHook
+;------------------------------------------------------
+;変換キーを使っていろいろ
+;------------------------------------------------------
 ;頻繁にスクリプトを変える場合に便利
 vk1Csc079 & 0::Reload   ;このスクリプトをリロードして適用
 vk1Csc079 & 8::Edit   ;このスクリプトを編集
@@ -21,42 +24,48 @@ vk1Csc079 & g::
     Send,{Ctrl}{End}     ;下の行末へ
 return
 
+;------------------------------------------------------
+;汎用（Macっぽく使いたいキー操作）
+;------------------------------------------------------
+;Shiftを押さないでアンダースコア
 sc073::_
 
-<^Tab::AltTab
->^Tab::AltTab
-<^Tab::AltTab
+;クイックメモ（AtomをAtok Padっぽく使う）
+Ctrl::
+  If (A_PriorHotkey = A_ThisHotKey && A_TimeSincePriorHotkey < 300)
+  {
+    Process,Exist,atom.exe
+    if ErrorLevel<>0
+      WinActivate,ahk_pid %ErrorLevel%
+    else
+      Run,%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Atom.lnk
+  }
+  KeyWait,Ctrl
+  return
 
+;タスク切り替え（KeySwapで置き換えた動作を戻すため）
+Ctrl & Tab::
+  GetKeyState, state, Shift
+  if state = U
+    Send,{Blind}{Alt down}{Tab}{Alt up}
+  else if state = D
+    Send,{Blind}{Shift down}{Alt down}{Tab}{Alt up}{Shift up}
+  return
+
+;<^Tab::AltTab
+;>^Tab::AltTab
+
+;アプリケーション内切り替え（KeySwapで置き換えた動作を戻すため）
 !Tab::Send {LCtrl down}{Tab}{LCtrl up}
 +!Tab::Send {Shift down}{LCtrl down}{Tab}{LCtrl up}{Shift up}
 
-;<!Tab::
-;  GetKeyState, state, Ctrl
-;  if state = U
-;    Send,{Ctrl}{Tab}
-;  else if state = D
-;    Send,{Ctrl}{Tab}
-;     return
-
-;>+<^Tab::ShiftAltTab
-
-#IF WinActive("ahk_class TMobaXtermForm")
+;------------------------------------------------------
+;アプリケーション固有設定
+;------------------------------------------------------
+;MobaXterm / Mintty
+#IF WinActive("ahk_class TMobaXtermForm") || WinActive("ahk_class mintty")
 
 !c::Send {LCtrl down}{Ins}{LCtrl up}
 !v::Send {Shift down}{Ins}{Shift up}
- 
-#IF
 
 #UseHook off
-
-;;LCtrl & Tab::
-;;  If GetKeyState("+", "P")
-;;    Send, ShiftAltTab
-;;  Else
-;;    Send, AltTab
-;;  Return
-
-;;LCtrl & Tab::AltTab
-;;LCtrl & {Shift Tab}::ShiftAltTab
-;LCtrl & q::Send +!{F4}
-

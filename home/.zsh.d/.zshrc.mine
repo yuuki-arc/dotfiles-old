@@ -229,20 +229,20 @@ fi
 
 
 # for go lang
-if [ -x "`which go`" ]; then
-  export GOROOT=`go env GOROOT`
-  export GOPATH=$HOME
-  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-fi
+#if [[ "$OSTYPE" =~ cygwin ]]; then
+#  # converts *nix path to Windows path which Go expects on Windows
+#  export GOROOT=`/cygdrive/c/tools/go`
+#  export GOPATH=$(cygpath -w $HOME)
+#  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+#else
+  if [ -x "`which go`" ]; then
+    export GOROOT=`go env GOROOT`
+    export GOPATH=$HOME
+    export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+  fi
+#fi
 
 # homebrew-file
 #export HOMEBREW_BREWFILE=~/src/github.com/yuuki-arc/Brewfile/Brewfile
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
-# cygwin
-if [[ "$OSTYPE" =~ cygwin ]];then
-  export CYGWIN="winsymlinks $CYGWIN"
-  export SVN_SSH=/usr/bin/ssh.exe
-fi
-

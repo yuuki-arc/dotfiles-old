@@ -1,4 +1,5 @@
-PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$PATH
+SHELL=`which zsh`
+PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:/usr/i686-pc-cygwin/bin:/usr/bin:$PATH
 export PATH
 
 # Added by the Heroku Toolbelt
@@ -65,3 +66,10 @@ if [ -x terminal-notifier ] ; then
   export SYS_NOTIFIER=`which terminal-notifier`
   export NOTIFY_COMMAND_COMPLETE_TIMEOUT=20
 fi
+
+# cygwin
+if [[ "$OSTYPE" =~ cygwin ]];then
+  export CYGWIN="winsymlinks $CYGWIN"
+  export SVN_SSH=/usr/bin/ssh.exe
+fi
+
