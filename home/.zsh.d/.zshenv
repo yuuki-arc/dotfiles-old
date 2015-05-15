@@ -22,9 +22,19 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 #  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.2/tools/cocos2d-console/bin
 #  export PATH=$COCOS_CONSOLE_ROOT:$PATH
 #fi
-if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.3 ] ; then
-  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.3/tools/cocos2d-console/bin
+#if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.3 ] ; then
+#  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.3/tools/cocos2d-console/bin
+#  export PATH=$COCOS_CONSOLE_ROOT:$PATH
+#fi
+
+if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.6 ] ; then
+  # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+  export COCOS_CONSOLE_ROOT=/Users/colors/cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
   export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+  # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+  export COCOS_TEMPLATES_ROOT=/Users/colors/cocos2d-x/cocos2d-x-3.6/templates
+  export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 fi
 
 # Add environment variable NDK_ROOT for cocos2d-x
