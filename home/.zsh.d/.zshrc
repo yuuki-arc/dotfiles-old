@@ -6,7 +6,7 @@ export ZSH=$ZDOTDIR/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="eastwood"
-ZSH_THEME="yua"
+ZSH_THEME="bullet-train"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
