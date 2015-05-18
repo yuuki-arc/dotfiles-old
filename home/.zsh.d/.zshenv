@@ -38,15 +38,23 @@ if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.6 ] ; then
 fi
 
 # Add environment variable NDK_ROOT for cocos2d-x
-if [ -d /Applications/adt-bundle/adt-bundle-mac-x86_64-20140702 ] ; then
+#if [ -d /Applications/adt-bundle/adt-bundle-mac-x86_64-20140702 ] ; then
 #  export NDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/android-ndk-r9d
 #  export ANDROID_SDK_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/sdk
 #  export ANT_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/sdk/tools
   export NDK_ROOT=/usr/local/opt/android-ndk
   export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
   export ANT_ROOT=/usr/local/bin
-  export PATH=$NDK_ROOT:$PATH
-fi
+#  export PATH=$NDK_ROOT:$PATH
+#fi
+
+export ANT_ROOT=/usr/local/opt/apache-ant/bin
+
+#export ANDROID_HOME=$HOME/AppData/Local/Android/android-sdk
+#export NDK_ROOT=$HOME/AppData/Local/Android/android-ndk-r10d
+#export ANDROID_SDK_ROOT=$HOME/AppData/Local/Android/android-sdk
+#export ANT_ROOT=$HOME/AppData/Local/Android/apache-ant/bin
+export PATH=$NDK_ROOT:$ANT_ROOT:$PATH
 
 # boot2docker
 export DOCKER_CERT_PATH=${HOME}/.boot2docker/certs/boot2docker-vm
