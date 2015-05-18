@@ -15,7 +15,6 @@ if [ -d ${HOME}/.rbenv  ] ; then
   eval "$(rbenv init - zsh)"
 fi
 
-export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 #if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.2 ] ; then
@@ -44,17 +43,18 @@ fi
 #  export ANT_ROOT=/Applications/adt-bundle-mac-x86_64-20140321/sdk/tools
   export NDK_ROOT=/usr/local/opt/android-ndk
   export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
-  export ANT_ROOT=/usr/local/bin
-#  export PATH=$NDK_ROOT:$PATH
+  export ANT_ROOT=/usr/local/opt/apache-ant/bin
+  export ANDROID_HOME=$ANDROID_SDK_ROOT
+  export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
+  export PATH=$ANT_ROOT:$PATH
+  export PATH=$ANDROID_HOME/tools:$NDK_ROOT:$PATH
 #fi
-
-export ANT_ROOT=/usr/local/opt/apache-ant/bin
 
 #export ANDROID_HOME=$HOME/AppData/Local/Android/android-sdk
 #export NDK_ROOT=$HOME/AppData/Local/Android/android-ndk-r10d
 #export ANDROID_SDK_ROOT=$HOME/AppData/Local/Android/android-sdk
 #export ANT_ROOT=$HOME/AppData/Local/Android/apache-ant/bin
-export PATH=$NDK_ROOT:$ANT_ROOT:$PATH
+#export PATH=$NDK_ROOT:$ANT_ROOT:$PATH
 
 # boot2docker
 export DOCKER_CERT_PATH=${HOME}/.boot2docker/certs/boot2docker-vm
