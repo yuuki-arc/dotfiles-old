@@ -36,6 +36,7 @@ if [ -d /Applications/eclipse ] ; then
   export ANDROID_HOME=$ANDROID_SDK_ROOT
   export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
   export PATH=$ANDROID_HOME/tools:$NDK_ROOT:$PATH
+  export NDK_CCACHE=`which ccache`
 fi
 
 # boot2docker
