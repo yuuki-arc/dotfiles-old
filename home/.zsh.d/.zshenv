@@ -1,5 +1,7 @@
 SHELL=`which zsh`
-PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:/usr/i686-pc-cygwin/bin:/usr/bin:$PATH
+PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$PATH
+#PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:/usr/i686-pc-cygwin/bin:/usr/bin:$PATH
+#PATH=$HOME/bin:$HOME/Library/Python/2.7/bin:/usr/local/mysql/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:/usr/i686-pc-mingw32/bin:/usr/bin:$PATH
 export PATH
 
 # Added by the Heroku Toolbelt
