@@ -59,6 +59,10 @@ Ctrl & Tab::
 !Tab::Send {LCtrl down}{Tab}{LCtrl up}
 +!Tab::Send {Shift down}{LCtrl down}{Tab}{LCtrl up}{Shift up}
 
+;フォントサイズ変更を無効化して通常のホイール動作にする
+Ctrl & WheelUp::Send {WheelUp}
+Ctrl & WheelDown::Send {WheelDown}
+
 ;------------------------------------------------------
 ;アプリケーション固有設定
 ;------------------------------------------------------
