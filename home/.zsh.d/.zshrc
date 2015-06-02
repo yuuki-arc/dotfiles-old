@@ -50,7 +50,7 @@ ZSH_CUSTOM=$ZDOTDIR/.oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [[ "$OSTYPE" =~ cygwin ]];then
-  plugins=(git themes alias peco web-search zsh-syntax-highlighting)
+  plugins=(git themes alias percol web-search zsh-syntax-highlighting)
 else
   plugins=(git themes alias peco notify web-search osx zsh-syntax-highlighting)
 fi
