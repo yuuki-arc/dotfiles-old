@@ -206,8 +206,6 @@ esac
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
-export NODE_PATH=${HOME}/.nodebrew/current/lib/node_modules
-export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
 export TERM=xterm-256color
 
 # ssh 時に新規ウィンドウを作る
@@ -224,23 +222,30 @@ if [ $TERM = "screen" ] ; then
 fi
 
 if [ $SHLVL = 1 ]; then
-    alias tmux="tmux attach || tmux new-session \; source-file ~/.tmux/session"
+#    alias tmux="tmux attach || tmux new-session \; source-file ~/.tmux/session"
 fi
 
 
-# for go lang
-#if [[ "$OSTYPE" =~ cygwin ]]; then
-#  # converts *nix path to Windows path which Go expects on Windows
-#  export GOROOT=`/cygdrive/c/tools/go`
-#  export GOPATH=$(cygpath -w $HOME)
-#  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-#else
+if [[ "$OSTYPE" =~ cygwin ]]; then
+  export NODE_PATH=${HOME}/.nodebrew/current/lib/node_modules
+  export PYTHONPATH="/lib/python2.7/site-packages"
+  # golang #converts *nix path to Windows path which Go expects on Windows
+  export GOROOT=$(cygpath -w /usr/local/opt/go)
+  export GOPATH=$(cygpath -w $HOME)
+  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+  # alias
+  if which trash-put &> /dev/null; then
+    alias rm='trash-put'
+  fi
+else
+  export NODE_PATH=${HOME}/.nodebrew/current/lib/node_modules
+  export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
   if [ -x "`which go`" ]; then
     export GOROOT=`go env GOROOT`
     export GOPATH=$HOME
     export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
   fi
-#fi
+fi
 
 # homebrew-file
 #export HOMEBREW_BREWFILE=~/src/github.com/yuuki-arc/Brewfile/Brewfile
