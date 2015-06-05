@@ -80,5 +80,13 @@ if [[ "$OSTYPE" =~ cygwin ]];then
   export CYGWIN="winsymlinks $CYGWIN"
   export SVN_SSH=/usr/bin/ssh.exe
   export TMUX_TMPDIR=/var/run/tmux
+  export PYTHONPATH="/lib/python2.7/site-packages"
+  export PATH=$PATH:~/.local/bin
+#  powerline-daemon -q
+#  . ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+else
+  export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
+  export PATH=$PATH:~/Library/Python/2.7/bin
+#  powerline-daemon -q
+#  . ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
-

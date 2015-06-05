@@ -228,7 +228,6 @@ fi
 
 if [[ "$OSTYPE" =~ cygwin ]]; then
   export NODE_PATH=${HOME}/.nodebrew/current/lib/node_modules
-  export PYTHONPATH="/lib/python2.7/site-packages"
   # golang #converts *nix path to Windows path which Go expects on Windows
   export GOROOT=$(cygpath -w /usr/local/opt/go)
   export GOPATH=$(cygpath -w $HOME)
@@ -239,7 +238,6 @@ if [[ "$OSTYPE" =~ cygwin ]]; then
   fi
 else
   export NODE_PATH=${HOME}/.nodebrew/current/lib/node_modules
-  export PYTHONPATH="$PYTHONPATH:~/Library/Python/2.7/lib/python/site-packages"
   if [ -x "`which go`" ]; then
     export GOROOT=`go env GOROOT`
     export GOPATH=$HOME
