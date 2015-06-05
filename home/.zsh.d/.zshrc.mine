@@ -232,7 +232,7 @@ if [[ "$OSTYPE" =~ cygwin ]]; then
   # golang #converts *nix path to Windows path which Go expects on Windows
   export GOROOT=$(cygpath -w /usr/local/opt/go)
   export GOPATH=$(cygpath -w $HOME)
-  export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
   # alias
   if which trash-put &> /dev/null; then
     alias rm='trash-put'
