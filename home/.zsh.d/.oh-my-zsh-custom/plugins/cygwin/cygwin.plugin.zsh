@@ -10,3 +10,4 @@ alias netsh='wincmd netsh'
 alias cscript='wincmd cscript'
 
 alias ping='wincmd /c/Windows/system32/PING.EXE'
+alias open="cygstart"
