@@ -31,7 +31,7 @@ alias mdl="bundle exec middleman"
 alias mdld="bundle exec middleman deploy"
 alias mdlb="bundle exec middleman build"
 
-#eval "$(hub alias -s)"
+eval "$(hub alias -s)"
 
 alias g="git"
 alias gc="git commit -v"
