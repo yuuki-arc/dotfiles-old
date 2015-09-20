@@ -20,8 +20,8 @@ fi
 #  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.2/tools/cocos2d-console/bin
 #  export PATH=$COCOS_CONSOLE_ROOT:$PATH
 #fi
-if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.6 ] ; then
-  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
+if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.8 ] ; then
+  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.8/tools/cocos2d-console/bin
   export PATH=$COCOS_CONSOLE_ROOT:$PATH
 fi
 
@@ -35,7 +35,7 @@ if [ -d /Applications/eclipse ] ; then
   export ANT_ROOT=/usr/local/bin
   export ANDROID_HOME=$ANDROID_SDK_ROOT
   export ANDROID_SDK_HOME=$ANDROID_SDK_ROOT
-  export PATH=$ANDROID_HOME/tools:$NDK_ROOT:$PATH
+  export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK_ROOT:$PATH
   export NDK_CCACHE=`which ccache`
 fi
 
