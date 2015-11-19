@@ -26,13 +26,13 @@ fi
 #  export PATH=$COCOS_CONSOLE_ROOT:$PATH
 #fi
 
-if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.6 ] ; then
+if  [ -d ${HOME}/cocos2d-x/cocos2d-x-3.8 ] ; then
   # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.6/tools/cocos2d-console/bin
+  export COCOS_CONSOLE_ROOT=$HOME/cocos2d-x/cocos2d-x-3.8/tools/cocos2d-console/bin
   export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
   # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-  export COCOS_TEMPLATES_ROOT=$HOME/cocos2d-x/cocos2d-x-3.6/templates
+  export COCOS_TEMPLATES_ROOT=$HOME/cocos2d-x/cocos2d-x-3.8/templates
   export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 fi
 

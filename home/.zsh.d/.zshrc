@@ -60,8 +60,11 @@ fi
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz compinit
+if [[ "$OSTYPE" =~ cygwin ]];then
+compinit -C -u -d ~/.zcompdump
+else
 compinit -u -d ~/.zcompdump
-
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,4 +91,4 @@ source $ZSH/oh-my-zsh.sh
 
 #最後に追加
 source $ZDOTDIR/.zshrc.mine  #自分の.zshrcを有効にする
-[ -f ~/.zshrc.`hostname -s` ] && source ~/.zshrc.`hostname -s` # ローカルの設定を読み込む
+[ -f $ZDOTDIR/.zshrc.`hostname -s` ] && source $ZDOTDIR/.zshrc.`hostname -s` # ローカルの設定を読み込む

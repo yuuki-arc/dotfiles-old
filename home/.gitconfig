@@ -26,7 +26,8 @@
 	show = diff-highlight 
 	diff = diff-highlight 
 [ghq]
-	root = ~/src
+	#root = ~/src
+	root = c:\\Users\\masaki.yamaoka\\src
 [push]
 	default = simple
 [github]
